@@ -1,0 +1,73 @@
+.bg {
+    background-image: url('/images/loginbg.jpg');
+    background-repeat: repeat;
+    background-size: cover;
+    opacity: 1.5;
+    }
+    h1{
+        margin-top: 60px;
+        text-align: center;
+        color:mintcream;
+    }
+    .Border{
+        background-color: lightgoldenrodyellow;
+        margin:auto;
+        height: 550px;
+        width: 310px;
+        border: 1px solid black;
+    }
+    img{
+        width: 310px;
+        margin: auto;
+    }
+    .form{
+        max-width: 250px;
+        margin: auto;
+        overflow:hidden;
+    }
+    .container{
+        padding-left: 40px;   
+     }
+    input[type=text],input[type=password]{
+        margin: 20px 0;
+    }
+    input[type=submit],input[type=reset]{
+        margin: 10px 15px 20px;
+    }
+    input[type=submit] :hover, input[type=reset] :hover{
+        background-color: darkblue;
+    }
+    span{
+        padding-left: 15%;
+        float: left;
+        margin-top: 10px;
+    }
+    span a{
+        color: rgb(62, 62, 148);
+    }
+    span a:hover {
+        color: rgb(3, 48, 245);
+      }
+
+      #popup{
+            width: 230px;
+            background-color: rgb(226, 250, 201);
+            color: rgb(245, 40, 102);
+            padding: 5px;
+            border: 0.5px solid gray;
+            font-size: 12px;
+            display: none;
+            position:relative;
+            margin: -15px -30px 0;
+    }
+    #popup1{
+            color: rgb(245, 40, 40);
+            padding: 5px;
+            font-size: 17px;
+            display: none;
+            position:absolute;
+            float: top;
+            z-index: 1;
+            margin-top: -40px;
+            margin-left: -15px;
+    }

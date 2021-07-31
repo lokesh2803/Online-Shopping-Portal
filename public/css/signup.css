@@ -1,0 +1,95 @@
+.bg{
+    background-image: url('/images/signupbg.jpg');
+    background-size: 100% ;
+    background-repeat: round;
+}
+.container{
+    text-align: center;
+    margin-top: 80px;
+    
+}
+.container h1{
+    color:rgb(209, 192, 181);
+    text-transform: capitalize;
+    font-size: 250%;
+    
+    position: relative;
+    top: 50%;
+}
+img{
+    width: 10%;
+    border-radius: 100%;
+    margin-bottom: 20px;
+}
+.form{
+    border: 1px;
+    width: 35%;
+    margin: auto;
+    
+}
+form .text{
+    font-size: 1.3rem;
+    color: khaki;
+    margin: 20px;
+}
+input{
+    margin: 20px;
+    border-radius: 15px;
+    width: 50%;
+    height: 30px;
+    box-sizing: border-box;
+    text-align: center;
+}
+button{
+    margin: 15px;
+    background-color: lightslategrey;
+    box-sizing: content-box;
+    font-size: 1.1rem;
+}
+form p{
+    color: rgb(62, 109, 80);
+}
+button:hover{
+    background-color: rgb(75, 153, 67);
+    cursor: pointer;
+}
+
+#mail_exist{
+    color: rgb(245, 40, 102);
+    display: none;
+    font-size: 14px;
+    margin-bottom: 20px;
+    position:relative;
+}
+
+#password_criteria{
+    color: rgb(245, 40, 102);
+    font-size: 12px;
+    display: none;
+    position:relative;
+    margin-top: -10px;
+}
+#user_exist{
+    color: rgb(245, 40, 102);
+    display: none;
+    font-size: 14px;
+    margin-top: 10px;
+    margin-bottom: -10px;
+    position:relative;
+}
+#password_criteria_wrong{
+    color: rgb(245, 40, 102);
+    display: none;
+    font-size: 14px;
+    margin-top: 10px;
+    margin-bottom: -10px;
+    position:relative;
+}
+#otpwrong{
+    color: rgb(245, 40, 102);
+    display: block;
+    font-size: 14px;
+    margin-top: 10px;
+    margin-bottom: -10px;
+    position:relative;
+}

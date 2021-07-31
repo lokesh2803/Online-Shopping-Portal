@@ -1,0 +1,43 @@
+.bg {
+    background-image: url('/images/o.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 1.5;
+    }
+
+h1{
+    margin: 50px auto;
+    text-align: center;
+    font-size:300%;
+    color: rgb(26, 105, 59);
+}
+.container{
+    margin: 30px auto;
+    height: 550px;
+    width: 210px;
+}
+.container input{
+    width: 200px;
+    height: 30px;
+    margin-bottom: 20px;
+}
+label{
+    font-size: larger;
+    color: rgb(71, 26, 116);
+}
+
+.formelements{
+    margin: 10px auto;
+    position: relative;
+}
+
+#confirmorder{
+    margin-top: 30px;
+    height: 30px;
+    width: max-content;
+    background-color: rgb(245, 142, 101);
+    font-size: large;
+    text-align: center;
+    margin-left: 30px;
+    cursor: pointer;
+}

@@ -1,0 +1,73 @@
+body{
+    background-color: rgb(27, 104, 204);
+}
+.container {
+    background-color: rgb(120, 241, 241);
+    box-sizing: content-box;
+    width: 400px;
+    border: rgb(231, 235, 16) 5px outset;
+    
+    text-align: center ;
+    margin: auto;
+    margin-top: 100px;
+}
+.container h1{
+    margin-bottom: 40px;
+    color: rgb(49, 5, 49);
+}
+.container input,label{
+    margin: 30px;
+    font-size: 110%;
+    height: 20px;
+    width: 200px;
+    font-weight: 120;
+}
+
+#oldpass{
+    color: rgb(245, 40, 40);
+    margin-bottom: 10px;
+    font-size: 17px;
+    display: none;
+    position:relative;
+}
+
+#wrongpass{
+    color: rgb(245, 40, 40);
+    margin-bottom: 10px;
+    font-size: 17px;
+    display: none;
+    position:relative;
+}
+
+#popup{
+    width: 230px;
+    background-color: rgb(226, 250, 201);
+    color: rgb(245, 40, 102);
+    padding: 5px;
+    border: 0.5px solid gray;
+    font-size: 12px;
+    display: none;
+    position:relative;
+    margin: -25px auto 10px;
+}
+
+#popup1{
+    color: rgb(255, 0, 0);
+    padding: 5px;
+    font-size: 15px;
+    display: none;
+    position:relative;
+    margin: 5px auto -25px;
+}
+
+#button{
+    margin-top: -20px;
+    border: 1px black solid;
+    width: fit-content;
+    height: min-content;
+}
+
+#button:hover{
+    cursor:pointer;
+    background-color: rgb(144, 176, 235);
+}

@@ -1,0 +1,62 @@
+body{
+    background-color: rgb(196, 243, 149);
+}
+img{
+    border-radius: 100%;
+    width: 200px;
+    margin-bottom: 20px;
+}
+#img{
+    margin: 70px 40% 20px;
+}
+.table1{
+    margin: auto;
+    width: 400px;
+    font-size: large;
+    margin-bottom: 20px;
+}
+.head{
+    color: rgb(247, 25, 25);
+}
+.myorder{
+    margin-left: 20%;
+    font-size: large;
+    font-weight: bold;
+}
+.table2{
+    margin: auto;
+    border: 1px solid black;
+}
+.box{
+    border: 1px solid black;
+}
+.no_order_msg{
+    text-align: center;
+    font-size: large;
+    color: rgb(49, 136, 136);
+}
+.nav{
+    margin-top: 10px;
+    box-sizing: content-box;
+    height: 40px;
+    background-color: rgb(107, 107, 146);
+    text-align: center;
+    padding:1%;
+    font-size: 1.1rem;
+}
+.nav a{
+    text-decoration-line: none;
+    color: black;
+    float: right;
+    box-sizing:content-box;
+    padding:0.7%;
+    text-align: center;
+    margin-right: 20px;
+}
+.nav a:hover{
+    background-color: rgb(132, 154, 155);
+}
+.nav a.active{
+    background-color: rgb(70, 70, 223);
+    color: ghostwhite;
+}
