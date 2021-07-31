@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="css/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="apps/home.js"></script>
+</head>
+<body>
+    <form id="form">
+    <div class="nav">
+        <input type="text" class="search" name="search" value="<%=products.searchvalue%>" placeholder="search your products here">
+        <button type="submit" class="searchicon"  formaction="/home" formmethod="POST" ><i class="fa fa-search"></i></button>
+        <a href="/">Logout</a>
+        <a href="profile">Profile</a>
+        <a href="cart">MyCart</a>
+        <a href="Home" class="active">Home</a>
+    </div>
+    
+    <section class="products"> 
+        <%if(products.product.length==0){%>
+            <h1 class="no_match">OOPS! Sorry No match products found for your search</h1>
+            <%}else{%>
+        <%for(let i=0;i<products.product.length;i++){%>     
+        <div class="product">
+            <img src="/images/<%=products.product[i].productimg%>.jpg">
+          <div class="product-info">
+              <input type="text" name="productname" value="<%=products.product[i].productname%>" style="display: none;">
+            <h5><%=products.product[i].productname%></h5>
+            <input type="text" name="productprice" value="<%=products.product[i].productprice%>" style="display: none;">
+            <h6>Rs.<%=products.product[i].productprice%></h6>
+            <%if(cart.has(products.product[i].productname)){%>
+                <button type="button" class="addedtocart" aria-readonly="true">Added to cart</button>
+            <%}else{%>
+                <input type="button" class="addcart" onclick="AddToCart('<%=products.product[i].productname%>')" value="Add to Cart">
+            <%}%>
+            <input type="submit" id="reload" formaction="/addcart" formmethod="POST" style="display: none;">
+          </div>
+        </div>
+        <%}}%>
+    </section>
+</form> 
+</body>
+</html>

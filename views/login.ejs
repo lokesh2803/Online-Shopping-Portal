@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel = "stylesheet" type = "text/css" href = "css/login.css">
+    <script src="apps/login.js"></script>
+</head>
+<body class="bg">
+    <h1>LOGIN</h1>
+    <div class="Border">
+        <img src="images/login-man.png">
+    <form  class="form" action="/login" method="POST">
+        <div class="container">
+        <div id="popup1" <% if(!list.valid_id){%>
+             style = "display : block;"
+        <% } %>>Invalid Username/Password</div>
+        <label id="name">Enter Username :</label><br>
+        <input type="text" name="name" required><br>
+        <label >Enter Password:</label><br>
+        <input type="password" name="password" id="password" oninput="validate()" required><br>
+        <div id="popup">Password must contain alteast 8 characters with 1 special character, 1 number , 1 uppercase and 1 lowercase letter</div>
+        <input type="submit" value="Login">
+        <input type="reset"><br>
+        </div>
+        <span >Forgot? <a href="forgot_password">username/Password</a></span>
+        <span >Dont have account? <a href="signup">Create one</a></span>
+    </form>
+</div>
+</body>
+</html>

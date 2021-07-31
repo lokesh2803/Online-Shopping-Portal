@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link rel="stylesheet" type="text/css" href="css/cart.css">
+    <script src="apps/cart.js"></script>
+</head>
+<body>
+    <form id="form">
+        <div class="nav">
+    
+            <a href="/">Logout</a>
+            <a href="profile">Profile</a>
+            <a href="cart" class="active">MyCart</a>
+            <a href="Home" >Home</a>
+        </div>
+        
+         
+            <%if(products.cart.size<=1){%>
+                <h1 class="no_match">Cart is Empty! Add Something to Cart</h1>
+                <%}else{
+                    var amount=0%>
+            <section class="products">
+            <%for(let i=0;i<products.product.length;i++){%>   
+                <%if(cart.has(products.product[i].productname)){
+                    amount+=products.product[i].productprice;
+                    %>  
+                <div class="product">
+                <img src="/images/<%=products.product[i].productimg%>.jpg">
+              <div class="product-info">
+                  <input type="text" name="productname" value="<%=products.product[i].productname%>" style="display: none;">
+                <h5><%=products.product[i].productname%></h5>
+                <input type="text" name="productprice" value="<%=products.product[i].productprice%>" style="display: none;">
+                <h6>Rs.<%=products.product[i].productprice%></h6>
+                <div class="Qty">
+                    <input type="button" value="-" onclick="decreaseQuantity('<%=products.product[i].productname%>.Qty','<%=products.product[i].productprice%>')">
+                    <input type="text" class="Qtybox" id="<%=products.product[i].productname%>.Qty" value="1" readonly>
+                    <input type="button" value="+" onclick="increaseQuantity('<%=products.product[i].productname%>.Qty','<%=products.product[i].productprice%>')">
+                </div>
+                    <input type="button" class="addcart" onclick="RemoveFromCart('<%=products.product[i].productname%>')" value="Remove from Cart">
+                <%}%>
+                <input type="submit" id="reload" formaction="/removecart" formmethod="POST" style="display: none;">
+              </div>
+            </div>
+            <%}%>
+            </section>
+            <div class="foo">
+                <input type="text" name="totalamount" id="totalamount" value="Total Amount = Rs.<%=amount%>" readonly>
+                <input type="submit" name="placeorder" id="placeorder" value="Place Order" formaction="/placeorder" formmethod="POST" >
+            </div>
+            <%}%>
+    </form> 
+</body>
+</html>

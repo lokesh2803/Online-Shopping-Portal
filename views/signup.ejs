@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <link rel="stylesheet" type="text/css" href="css/signup.css">
+    <script src="apps/signup.js"></script>
+</head>
+<body class="bg">
+    <div class="container">
+        <h1>Create New Account</h1>
+        <img src="images/signup.jpg">
+        <form class="form" action="/signup" method="POST">
+            <% if(!list.mailverify){%>
+            <div id="mail_exist" <% if(list.mailexist){%>style="display: block;"<%}%>>'User already exists with mail id - <%=list.mailname%>!'</div>
+            <label class="text">Enter Mail-id:</label><br>
+            <% if(list.mailname=="" || list.mailexist){%>
+            <input type="email" name="mail" id="mail" required><br>
+            <button type="submit">Enter</button>
+            <%}else{%>
+                <input type="email" name="mail" id="mail" value="<%=list.mailname%>" readonly><br>
+            <p>OTP sent to your mail-id <%=list.mailname%></p>
+            <label class="text">Enter OTP: </label><br>
+            <%if(otpwrong){%>
+                <div id="otpwrong">'Invalid OTP! Enter again!'</div>
+                <%}%>
+            <input type="password" name="otp" id="otp" required><br>
+            <button type="submit">I'm in</button>
+            <%}%>
+            <%} else{%>
+                <label class="text">Mail-id:</label><br>
+                <input type="email" name="mail" id="mail" value="<%=list.mailname%>" readonly><br>
+                <label class="text">Enter username:</label><br>
+                <div id="user_exist" <% if(list.userexist){%>style="display: block;" <%}%>>'Username already exists'</div>
+                <input type="text" name="uname" id="uname" required><br>
+                <label class="text">Create password:</label><br>
+                <div id="password_criteria_wrong"<% if(list.passwrong){%>style="display: block;"<%}%>>'Password criteria doesnt match'</div>
+                <input type="password" name="password" id="password" oninput="remove_popup()" required><br>
+                <div id="password_criteria">'Password must contain alteast 8 characters with 1 special character, 1 number , 1 uppercase and 1 lowercase letter'</div>
+                <button type="submit">Signin</button>
+                <%}%>
+        </form>
+    </div>
+</body>
+</html>

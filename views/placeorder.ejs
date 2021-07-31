@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Place Order</title>
+    <link rel="stylesheet" type="text/css" href="css/order.css">
+</head>
+<body class="bg">
+    <h1>Confirm Order!</h1>
+    <form class="container">
+        <label class="formelements">Name : </label><br>
+        <input class="formelements" type="text" name="name" value="" placeholder="Enter name" required><br>
+        <label class="formelements">Deilvery Address : </label><br>
+        <input class="formelements" type="text" name="address" value="" placeholder="Enter delivery address" required><br>
+        <label class="formelements">Mobile No : </label><br>
+        <input class="formelements" type="text" name="mobilenum" value="" placeholder="Enter mobile number" pattern="[6-9]{1}[0-9]{9}" required title="Enter valid mobile number"><br>
+        
+        <label class="formelements">Order Products :</label>
+        <ul>
+            <%for(let i=0;i<list.products.length;i++){%>
+                <li><%=list.products[i]%></li>
+                <input name="products" value="<%=list.products[i]%>" style="display: none;">
+                    <%}%>
+            </ul>
+        <label>Amount Payable : Rs.</label><span ><%=list.payable%></span>
+        <input name="payable" value="<%=list.payable%>" style="display: none;" >
+        <input type="submit" id="confirmorder" value="confirm Order" formaction="/confirmorder" formmethod="POST">
+    </form>
+</body>
+</html>

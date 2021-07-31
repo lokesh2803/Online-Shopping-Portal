@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" type="text/css" href="css/profile.css">
+</head>
+<body>
+    <div class="nav">
+        <a href="/">Logout</a>
+        <a href="profile" class="active">Profile</a>
+        <a href="cart">MyCart</a>
+        <a href="Home" >Home</a>
+    </div>
+
+    <table class="table1">
+        <div id="img"><img src="/images/profile.jpg"></div>
+        <tr>
+            <td class="head">Username</td>
+            <td>:</td>
+            <td><%=x.name%></td>  
+        </tr>
+        <tr>
+            <td class="head">Registered Mail</td>
+            <td>:</td>
+            <td><%=x.mail%></td>  
+        </tr>
+        <tr>
+            <td class="head">Password</td>
+            <td>:</td>
+            <td><a href="change_password"> Change Password</a></td> 
+        </tr>
+        <tr>
+            <td class="head">My Orders :</td>
+        </tr>
+    </table>
+    <%if(x.orders.length>0){%>
+    <table class="table2">
+        <tr>
+            <th class="box"> Name </th>
+            <th class="box"> Delivery Address </th>
+            <th class="box"> Mobile No. </th>
+            <th class="box"> Products </th>
+            <th class="box"> Bill Amount </th>
+            <th class="box"> Order date </th>
+        </tr>
+        <%for(let i=0;i<x.orders.length;i++){%>
+            <tr >
+                <td class="box"><%=x.orders[i].name%></td>
+                <td class="box"><%=x.orders[i].address%></td>
+                <td class="box"><%=x.orders[i].mobileno%></td>
+                <td class="box"><%=x.orders[i].products%></td>
+                <td class="box"><%=x.orders[i].billamount%></td>
+                <td class="box"><%=x.orders[i].orderdate%></td>
+            </tr>
+            <%}%>
+    </table>
+    <%} else{%>
+        <p class="no_order_msg">'No orders placed yet!'</p>
+        <%}%>
+</body>
+</html>
